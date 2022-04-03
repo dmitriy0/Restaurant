@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:elevation="4dp">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:entries="@array/cities"
+            android:layout_marginStart="8dp"
+            android:minHeight="48dp" />
+
+        <ImageView
+            android:id="@+id/qr_code"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/qr" />
+    </FrameLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_above="@+id/navigation"
+        android:layout_height="0dp">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="204dp"
+            android:background="#fff"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                app:layout_scrollFlags="scroll|snap"
+                app:toolbarId="@+id/toolbar">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="24dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="300dp"
+                            android:layout_height="112dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1"
+                            app:shapeAppearanceOverlay="@style/roundedImageView"
+                            app:srcCompat="@drawable/banner" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="300dp"
+                            android:layout_height="112dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1"
+                            app:shapeAppearanceOverlay="@style/roundedImageView"
+                            app:srcCompat="@drawable/banner" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="300dp"
+                            android:layout_height="112dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_weight="1"
+                            app:shapeAppearanceOverlay="@style/roundedImageView"
+                            app:srcCompat="@drawable/banner" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <Button
+                        android:id="@+id/button_pizza"
+                        android:layout_width="96dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:textColor="#C3C4C9"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:backgroundTint="#fff"
+                        android:elevation="4dp"
+                        android:text="Пицца" />
+
+                    <Button
+                        android:id="@+id/button_combo"
+                        android:layout_width="96dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:textColor="#C3C4C9"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:backgroundTint="#fff"
+                        android:elevation="4dp"
+                        android:text="Комбо" />
+
+                    <Button
+                        android:id="@+id/button_deserts"
+                        android:layout_width="96dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:textColor="#C3C4C9"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:backgroundTint="#fff"
+                        android:elevation="4dp"
+                        android:text="Десерты" />
+
+                    <Button
+                        android:id="@+id/button_drinks"
+                        android:layout_width="96dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="#C3C4C9"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:backgroundTint="#fff"
+                        android:elevation="4dp"
+                        android:text="Напитки" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#fff"
+        app:menu="@menu/bottom_menu" />
+
+</LinearLayout>
